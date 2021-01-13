@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.RadioButton
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -21,14 +22,16 @@ class DashboardFragment : Fragment() {
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentDashboardBinding.inflate(inflater, container, false)
+        val root = inflater.inflate(R.layout.fragment_dashboard, container, false)
+        binding = FragmentDashboardBinding.inflate(inflater)
         binding.btnAddStudent.setOnClickListener {
             val genderId = binding.radioGroup.checkedRadioButtonId
+            val gender:RadioButton = root.findViewById(genderId)
             Database().appendStudent(
                 Student(
                     binding.etName.text.toString(),
                     binding.etAge.text.toString().toInt(),
-                    gender,
+                    gender.text.toString(),
                     binding.etAddress.text.toString(),
                     binding.etImageUrl.text.toString()
                 )
