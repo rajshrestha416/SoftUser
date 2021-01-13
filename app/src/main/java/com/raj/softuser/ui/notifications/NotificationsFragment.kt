@@ -12,8 +12,6 @@ import com.raj.softuser.databinding.FragmentNotificationsBinding
 
 
 class NotificationsFragment : Fragment() {
-
-    private lateinit var notificationsViewModel: NotificationsViewModel
     private lateinit var binding: FragmentNotificationsBinding
 
     override fun onCreateView(
