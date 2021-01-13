@@ -22,14 +22,9 @@ class NotificationsFragment : Fragment() {
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-//        notificationsViewModel =
-//                ViewModelProvider(this).get(NotificationsViewModel::class.java)
         binding = FragmentNotificationsBinding.inflate(inflater, container, false)
-        val root = binding.root
-//        val textView: TextView = root.findViewById(R.id.text_notifications)
-//        notificationsViewModel.text.observe(viewLifecycleOwner, Observer {
-//            textView.text = it
-//        })
-        return root
+        binding.wvSoftwarica.loadUrl("https://softwarica.edu.np/")
+
+        return binding.root
     }
 }

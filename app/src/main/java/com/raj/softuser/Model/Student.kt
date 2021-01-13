@@ -6,7 +6,8 @@ import android.os.Parcelable
 data class Student(val studentName:String ?= null,
                    val studentAge:Int ?= null,
                    val studentAddress:String ?= null,
-                   val studentGender:String ?= null):Parcelable {
+                   val studentGender:String ?= null,
+                   val profileImage:String ?= null):Parcelable {
     constructor(parcel: Parcel) : this(
             parcel.readString(),
             parcel.readValue(Int::class.java.classLoader) as? Int,
