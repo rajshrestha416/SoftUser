@@ -9,23 +9,28 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.raj.softuser.R
+import com.raj.softuser.databinding.FragmentDashboardBinding
 
 class DashboardFragment : Fragment() {
 
     private lateinit var dashboardViewModel: DashboardViewModel
+    private lateinit var binding: FragmentDashboardBinding
 
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        dashboardViewModel =
-                ViewModelProvider(this).get(DashboardViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_dashboard, container, false)
-        val textView: TextView = root.findViewById(R.id.text_dashboard)
-        dashboardViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
+//        dashboardViewModel =
+//                ViewModelProvider(this).get(DashboardViewModel::class.java)
+        binding = FragmentDashboardBinding.inflate(inflater, container, false)
+        val root = binding.root
+
+        binding.textDashboard.text = "Hello Every One"
+//        val textView: TextView = root.findViewById(R.id.text_dashboard)
+//        dashboardViewModel.text.observe(viewLifecycleOwner, Observer {
+//            textView.text = it
+//        })
         return root
     }
 }
