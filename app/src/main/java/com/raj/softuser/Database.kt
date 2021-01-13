@@ -11,6 +11,6 @@ class Database {
         return studentList
     }
     fun deleteStudent(student: Student){
-        studentList.add(student)
+        studentList.remove(student)
     }
 }

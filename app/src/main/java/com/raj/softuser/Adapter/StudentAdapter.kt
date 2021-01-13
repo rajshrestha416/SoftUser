@@ -1,6 +1,7 @@
 package com.raj.softuser.Adapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.raj.softuser.Database
 import com.raj.softuser.R
+import com.raj.softuser.ui.dashboard.DashboardFragment
 import de.hdodenhof.circleimageview.CircleImageView
 
 private var database = Database()
@@ -55,7 +57,11 @@ class StudentAdapter(
             notifyItemRemoved(position)
         }
         holder.btnEdit.setOnClickListener{
-
+            Intent(context, DashboardFragment::class.java).also {
+                it.putExtra("student",student)
+                it.putExtra("position",position)
+                context.startActivity(it)
+            }
         }
 
     }

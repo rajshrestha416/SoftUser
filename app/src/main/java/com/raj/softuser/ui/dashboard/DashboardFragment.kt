@@ -1,5 +1,6 @@
 package com.raj.softuser.ui.dashboard
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -16,6 +17,7 @@ import com.raj.softuser.databinding.FragmentDashboardBinding
 
 class DashboardFragment : Fragment() {
     private lateinit var binding: FragmentDashboardBinding
+    private lateinit var gender: RadioButton
 
     override fun onCreateView(
             inflater: LayoutInflater,
@@ -24,9 +26,10 @@ class DashboardFragment : Fragment() {
     ): View? {
         val root = inflater.inflate(R.layout.fragment_dashboard, container, false)
         binding = FragmentDashboardBinding.inflate(inflater)
+//        val intent = root.intent.get
         binding.btnAddStudent.setOnClickListener {
             val genderId = binding.radioGroup.checkedRadioButtonId
-            val gender:RadioButton = root.findViewById(genderId)
+            gender = root.findViewById(genderId)
             Database().appendStudent(
                 Student(
                     binding.etName.text.toString(),
@@ -36,7 +39,15 @@ class DashboardFragment : Fragment() {
                     binding.etImageUrl.text.toString()
                 )
             )
+            clear()
         }
         return binding.root
+    }
+    private fun clear(){
+        binding.etName.setText("")
+        binding.etAge.setText("")
+        binding.etAddress.setText("")
+        binding.etImageUrl.setText("")
+        binding.radioGroup.clearCheck()
     }
 }
