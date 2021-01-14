@@ -19,7 +19,7 @@
             android:layout_marginTop="28dp"
             android:ems="15"
             android:inputType="textPersonName"
-            android:text="Student Name"
+            android:hint="Student Name"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.526"
             app:layout_constraintStart_toStartOf="parent"
@@ -32,7 +32,7 @@
             android:layout_marginTop="28dp"
             android:ems="15"
             android:inputType="textPersonName"
-            android:text="Age"
+            android:hint="Age"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/etName" />
@@ -44,7 +44,7 @@
             android:layout_marginTop="28dp"
             android:ems="15"
             android:inputType="textPersonName"
-            android:text="Address"
+            android:hint="Address"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
@@ -56,7 +56,7 @@
             android:layout_marginTop="28dp"
             android:ems="15"
             android:inputType="textPersonName"
-            android:text="Your Image"
+            android:hint="Your Image"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/etAddress" />
@@ -76,7 +76,8 @@
                 android:id="@+id/rdoMale"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Male" />
+                android:text="Male"
+                android:checked="true"/>
 
             <RadioButton
                 android:id="@+id/rdoFemale"
@@ -121,7 +122,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:text="Add Student"
+            android:text="ADD STUDENT"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/etImageUrl" />

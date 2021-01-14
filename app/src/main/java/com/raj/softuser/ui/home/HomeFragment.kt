@@ -25,7 +25,7 @@ class HomeFragment : Fragment() {
     ): View? {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
         val adapter = context?.let { StudentAdapter(it) }
-        binding.rvStudents.layoutManager = LinearLayoutManager(context)
+        binding.rvStudents.layoutManager = LinearLayoutManager(activity)
         binding.rvStudents.adapter = adapter
         return binding.root
     }

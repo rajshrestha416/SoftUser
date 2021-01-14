@@ -1,15 +1,22 @@
 package com.raj.softuser.Adapter
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.TextView
+import android.widget.Toast
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.raj.softuser.Database
+import com.raj.softuser.MainActivity
 import com.raj.softuser.R
 import com.raj.softuser.ui.dashboard.DashboardFragment
 import de.hdodenhof.circleimageview.CircleImageView
@@ -27,8 +34,7 @@ class StudentAdapter(
         val tvGender: TextView
         val btnEdit:ImageButton
         val btnDelete:ImageButton
-
-        init{
+            init{
             imgProfile = view.findViewById(R.id.imgProfile)
             tvName = view.findViewById(R.id.tvName)
             tvAddress = view.findViewById(R.id.tvAddress)
@@ -55,14 +61,20 @@ class StudentAdapter(
         holder.btnDelete.setOnClickListener{
             database.deleteStudent(student)
             notifyItemRemoved(position)
+            Toast.makeText(context, "Student Removed", Toast.LENGTH_LONG).show()
         }
-        holder.btnEdit.setOnClickListener{
-            Intent(context, DashboardFragment::class.java).also {
-                it.putExtra("student",student)
-                it.putExtra("position",position)
-                context.startActivity(it)
-            }
-        }
+//        holder.btnEdit.setOnClickListener{
+//            Intent(context, DashboardFragment::class.java).also {
+//                it.putExtra("student",student)
+//                it.putExtra("position",position)
+//                context.startActivity(it)
+//            }
+//            val communicator = context as Communicator
+//            communicator.passPosition(position)
+//
+//
+//            holder.navView.setOnNavigationItemSelectedListener(holder.nav)
+//        }
 
     }
 
