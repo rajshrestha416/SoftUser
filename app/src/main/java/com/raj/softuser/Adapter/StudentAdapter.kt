@@ -22,7 +22,7 @@ import com.raj.softuser.ui.dashboard.DashboardFragment
 import de.hdodenhof.circleimageview.CircleImageView
 
 private var database = Database()
-private var studentList = database.returnStudent()
+private var studentList = database.returnStudent().asReversed()
 class StudentAdapter(
     val context: Context
 ):RecyclerView.Adapter<StudentAdapter.StudentHolder>(){
